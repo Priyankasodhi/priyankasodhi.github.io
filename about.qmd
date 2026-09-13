@@ -1,0 +1,51 @@
+
+<div class="about-page">
+
+<p class="eyebrow">A LITTLE ABOUT ME</p>
+
+# From analytics<br>to data science.
+
+<p class="about-intro">
+I’m a data and analytics professional with several years of experience in analytics and business intelligence, working with international clients. I’m currently pursuing a Master of Data Science at the University of British Columbia, building on my experience while developing deeper technical skills.
+</p>
+
+<hr>
+
+<section class="about-section">
+
+<p class="section-label">BACKGROUND</p>
+
+
+<p>
+My professional journey has been centred around working with data to understand business problems and communicate meaningful insights. Before starting my MDS, I worked in analytics and business intelligence, gaining experience with data, reporting, and analytical problem-solving across international projects.
+</p>
+
+</section>
+
+<hr>
+
+<section class="about-section">
+
+<p class="section-label">WHY DATA SCIENCE</p>
+
+
+<p>
+Working with data made me want to explore what was possible beyond traditional analytics. I became increasingly interested in using statistics, programming, and machine learning to uncover patterns, make predictions, and build practical solutions. The MDS program is giving me the opportunity to strengthen these skills and move further into data science.
+</p>
+
+</section>
+
+<hr>
+
+<section class="about-section">
+
+<p class="section-label">OUTSIDE OF DATA SCIENCE</p>
+
+
+<p>
+When I’m not working with data, I enjoy exploring new places, trying different foods, discovering cafés and restaurants, and spending time with friends and family. Since moving to Vancouver, I’ve also enjoyed exploring the city and finding new places to visit on weekends.
+</p>
+
+</section>
+
+</div>
