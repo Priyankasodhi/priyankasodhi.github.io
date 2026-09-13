@@ -30,7 +30,5 @@ I’m a data and analytics professional with several years of experience in anal
 <div class="photo-frame">
 <img src="images/profile.png" alt="Priyanka Sodhi">
 </div>
-
 :::
-
 :::
