@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Exploring Penguin Body Mass\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 13, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\nNo matching items"
+    "text": "Exploring Iris Flower Measurements\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Penguin Body Mass\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 13, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -19,6 +19,27 @@
     "title": "My first weeks in MDS",
     "section": "",
     "text": "Starting the MDS program at UBC has been an exciting experience so far. The first few weeks have been a mix of orientation, meeting new people, getting familiar with the program, and settling into a new academic routine. It has been interesting to see how quickly the program has brought together people with different backgrounds and experiences.\nOne of the things that stood out to me was how quickly the pace picked up once classes began. There has already been a lot to learn, particularly around programming, statistics, and working with data. Coming from an analytics and business intelligence background, I’m looking forward to building on what I already know while developing stronger technical skills.\nI’m still getting used to the workload and the rhythm of MDS, but I’m enjoying the challenge. I’m especially excited to see how the concepts we learn in class connect to real-world data problems and to the work I hope to do in the future."
+  },
+  {
+    "objectID": "posts/r-analysis/index.html",
+    "href": "posts/r-analysis/index.html",
+    "title": "Exploring Iris Flower Measurements",
+    "section": "",
+    "text": "In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.\nThe goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.\nData source: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html"
+  },
+  {
+    "objectID": "posts/r-analysis/index.html#introduction",
+    "href": "posts/r-analysis/index.html#introduction",
+    "title": "Exploring Iris Flower Measurements",
+    "section": "",
+    "text": "In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.\nThe goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.\nData source: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html"
+  },
+  {
+    "objectID": "posts/r-analysis/index.html#loading-the-data",
+    "href": "posts/r-analysis/index.html#loading-the-data",
+    "title": "Exploring Iris Flower Measurements",
+    "section": "Loading the data",
+    "text": "Loading the data\nFirst, I load the built-in iris dataset in R.\n#| message: false #| warning: false\ndata(iris)\nhead(iris) The dataset contains 150 observations and measurements for three iris species.\nExploring the data\nNext, I check the structure of the dataset and examine the number of observations for each species.\nstr(iris)\ntable(iris$Species)\nThis confirms that the dataset contains three iris species with 50 observations for each species.\nComparing average petal length\nNext, I calculate the average petal length for each species.\naverage_petal_length &lt;- aggregate( Petal.Length ~ Species, data = iris, FUN = mean )\naverage_petal_length\nThe resulting table shows the average petal length for each iris species.\nVisualizing petal length\nFinally, I create a boxplot to compare petal length across the three species.\n#| label: fig-petal-length #| fig-cap: “Petal length measurements across iris species.”\nboxplot( Petal.Length ~ Species, data = iris, xlab = “Iris species”, ylab = “Petal length”, main = “Petal Length by Iris Species” )\nThe boxplot makes it easier to compare the distribution of petal lengths across the three species.\nWhat I found\nThe analysis shows that petal length differs across the three iris species. The summary table gives the average petal length for each species, while the boxplot shows the distribution of individual measurements.\nThis analysis demonstrates how R can be used to load a dataset, explore its structure, calculate grouped summaries, and create a visualization. ’’’"
   },
   {
     "objectID": "posts/python-analysis/index.html",

@@ -1,0 +1,74 @@
+---
+title: "Exploring Iris Flower Measurements"
+author: "Priyanka Sodhi"
+date: 2026-09-27
+---
+
+## Introduction
+
+In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.
+
+The goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.
+
+Data source: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html
+
+## Loading the data
+
+First, I load the built-in iris dataset in R.
+
+```{r}
+#| message: false
+#| warning: false
+
+data(iris)
+
+head(iris)
+The dataset contains 150 observations and measurements for three iris species.
+
+Exploring the data
+
+Next, I check the structure of the dataset and examine the number of observations for each species.
+
+str(iris)
+
+table(iris$Species)
+
+This confirms that the dataset contains three iris species with 50 observations for each species.
+
+Comparing average petal length
+
+Next, I calculate the average petal length for each species.
+
+average_petal_length <- aggregate(
+  Petal.Length ~ Species,
+  data = iris,
+  FUN = mean
+)
+
+average_petal_length
+
+The resulting table shows the average petal length for each iris species.
+
+Visualizing petal length
+
+Finally, I create a boxplot to compare petal length across the three species.
+
+#| label: fig-petal-length
+#| fig-cap: "Petal length measurements across iris species."
+
+boxplot(
+  Petal.Length ~ Species,
+  data = iris,
+  xlab = "Iris species",
+  ylab = "Petal length",
+  main = "Petal Length by Iris Species"
+)
+
+The boxplot makes it easier to compare the distribution of petal lengths across the three species.
+
+What I found
+
+The analysis shows that petal length differs across the three iris species. The summary table gives the average petal length for each species, while the boxplot shows the distribution of individual measurements.
+
+This analysis demonstrates how R can be used to load a dataset, explore its structure, calculate grouped summaries, and create a visualization.
+'''
