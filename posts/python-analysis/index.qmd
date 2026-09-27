@@ -32,11 +32,23 @@ The dataset contains information about penguin species, island, sex, body measur
 
 Cleaning the data
 
-Next, I keep the variables needed for this analysis and remove rows wNext, I keep the variables needed for this anguins_clean = penguins[["species", "body_mass_g"]].dropna()
+Next, I keep the variables needed for this analysis and remove rows with missing species or body mass values.
 
-penguipenguipenguipe)
+penguins_clean = penguins[["species", "body_mass_g"]].dropna()
 
-This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a cleanin sThis This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi aues("body_mass_g", ascending=False)
+penguins_clean.head()
+
+This gives us a clean dataset containing the penguin species and body mass measurements needed for the analysis.
+
+Comparing average body mass
+
+Next, I calculate the average body mass for each penguin species.
+
+average_mass = (
+    penguins_clean
+    .groupby("species", as_index=False)["body_mass_g"]
+    .mean()
+    .sort_values("body_mass_g", ascending=False)
 )
 
 average_mass
@@ -47,7 +59,26 @@ Visualizing body mass
 
 Finally, I create a bar chart to compare the average body mass across species.
 
-#| label:#| label:#| labes
-#| fig-cap: "Average body mass of #| fig-cap: "Average body mass of figsize=#| fig-cap: "Avera    averag#| fig-cap: "As"]#| fig-cap: "Average body mass of #| fig-cap: "Average body mass of figsize=#| fig-cap: "Avera    averaplt.tit#| fig-cape Body Ma#| fig-cap: "Average body mass of #| fig-cap: "Average body mass of figsize=#| fig-cap: "Avera    averag#| fig-cap: "As"]#| fig-cap: "Average body mass of #| fig-cap: "Aves th#| fig-cap: "Avees differ in their average body mass. The bar chart makes these differences easy to compare visually.
+#| label: fig-penguin-mass
+#| fig-cap: "Average body mass of penguins by species."
+
+plt.figure(figsize=(7, 5))
+
+plt.bar(
+    average_mass["species"],
+    average_mass["body_mass_g"]
+)
+
+plt.xlabel("Penguin species")
+plt.ylabel("Average body mass (g)")
+plt.title("Average Body Mass by Penguin Species")
+
+plt.show()
+
+The bar chart makes it easier to compare the average body mass of the three penguin species visually.
+
+What I found
+
+The analysis shows that penguin species differ in their average body mass. The bar chart makes these differences easy to compare visually.
 
 This simple analysis demonstrates how Python can be used to load a dataset, clean data, calculate grouped summaries, and create a visualization.
