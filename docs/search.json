@@ -25,21 +25,42 @@
     "href": "posts/r-analysis/index.html",
     "title": "Exploring Iris Flower Measurements",
     "section": "",
-    "text": "In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.\nThe goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.\nData source: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html"
+    "text": "In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.\nThe goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.\nData source: R iris dataset."
   },
   {
     "objectID": "posts/r-analysis/index.html#introduction",
     "href": "posts/r-analysis/index.html#introduction",
     "title": "Exploring Iris Flower Measurements",
     "section": "",
-    "text": "In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.\nThe goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.\nData source: https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html"
+    "text": "In this post, I use R to explore measurements of three species of iris flowers. The dataset contains measurements of sepal length, sepal width, petal length, and petal width.\nThe goal is to explore the measurements, calculate average petal length by species, and visualize the differences between species.\nData source: R iris dataset."
   },
   {
     "objectID": "posts/r-analysis/index.html#loading-the-data",
     "href": "posts/r-analysis/index.html#loading-the-data",
     "title": "Exploring Iris Flower Measurements",
     "section": "Loading the data",
-    "text": "Loading the data\nFirst, I load the built-in iris dataset in R.\n#| message: false #| warning: false\ndata(iris)\nhead(iris) The dataset contains 150 observations and measurements for three iris species.\nExploring the data\nNext, I check the structure of the dataset and examine the number of observations for each species.\nstr(iris)\ntable(iris$Species)\nThis confirms that the dataset contains three iris species with 50 observations for each species.\nComparing average petal length\nNext, I calculate the average petal length for each species.\naverage_petal_length &lt;- aggregate( Petal.Length ~ Species, data = iris, FUN = mean )\naverage_petal_length\nThe resulting table shows the average petal length for each iris species.\nVisualizing petal length\nFinally, I create a boxplot to compare petal length across the three species.\n#| label: fig-petal-length #| fig-cap: “Petal length measurements across iris species.”\nboxplot( Petal.Length ~ Species, data = iris, xlab = “Iris species”, ylab = “Petal length”, main = “Petal Length by Iris Species” )\nThe boxplot makes it easier to compare the distribution of petal lengths across the three species.\nWhat I found\nThe analysis shows that petal length differs across the three iris species. The summary table gives the average petal length for each species, while the boxplot shows the distribution of individual measurements.\nThis analysis demonstrates how R can be used to load a dataset, explore its structure, calculate grouped summaries, and create a visualization. ’’’"
+    "text": "Loading the data\nFirst, I load the built-in iris dataset in R.\n\ndata(iris)\n\nhead(iris)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1          5.1         3.5          1.4         0.2  setosa\n2          4.9         3.0          1.4         0.2  setosa\n3          4.7         3.2          1.3         0.2  setosa\n4          4.6         3.1          1.5         0.2  setosa\n5          5.0         3.6          1.4         0.2  setosa\n6          5.4         3.9          1.7         0.4  setosa\n\n\nThe dataset contains 150 observations and measurements for three iris species."
+  },
+  {
+    "objectID": "posts/r-analysis/index.html#exploring-the-data",
+    "href": "posts/r-analysis/index.html#exploring-the-data",
+    "title": "Exploring Iris Flower Measurements",
+    "section": "Exploring the data",
+    "text": "Exploring the data\nNext, I check the structure of the dataset and examine the number of observations for each species.\n\nstr(iris)\n\n'data.frame':   150 obs. of  5 variables:\n $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...\n $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...\n $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...\n $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...\n $ Species     : Factor w/ 3 levels \"setosa\",\"versicolor\",..: 1 1 1 1 1 1 1 1 1 1 ...\n\ntable(iris$Species)\n\n\n    setosa versicolor  virginica \n        50         50         50 \n\n\nThis confirms that the dataset contains three iris species with 50 observations for each species."
+  },
+  {
+    "objectID": "posts/r-analysis/index.html#comparing-average-petal-length",
+    "href": "posts/r-analysis/index.html#comparing-average-petal-length",
+    "title": "Exploring Iris Flower Measurements",
+    "section": "Comparing average petal length",
+    "text": "Comparing average petal length\nNext, I calculate the average petal length for each species.\n\naverage_petal_length &lt;- aggregate(\n  Petal.Length ~ Species,\n  data = iris,\n  FUN = mean\n)\n\naverage_petal_length\n\n     Species Petal.Length\n1     setosa        1.462\n2 versicolor        4.260\n3  virginica        5.552\n\n\nThe resulting table shows the average petal length for each iris species."
+  },
+  {
+    "objectID": "posts/r-analysis/index.html#visualizing-petal-length",
+    "href": "posts/r-analysis/index.html#visualizing-petal-length",
+    "title": "Exploring Iris Flower Measurements",
+    "section": "Visualizing petal length",
+    "text": "Visualizing petal length\nFinally, I create a boxplot to compare petal length across the three species.\n\nboxplot(\n  Petal.Length ~ Species,\n  data = iris,\n  xlab = \"Iris species\",\n  ylab = \"Petal length\",\n  main = \"Petal Length by Iris Species\"\n)\n\n\n\n\n\n\n\nFigure 1: Petal length measurements across iris species.\n\n\n\n\n\nThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot# What I The boxplot makes itshoThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe b petal lengthTfor each sThe boxplot mathe boxplotThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe bod tThe boxplot makes it easi its strucThe boxplot makes it easiTh toThe boxplot makes it easiTh ton."
   },
   {
     "objectID": "posts/python-analysis/index.html",
