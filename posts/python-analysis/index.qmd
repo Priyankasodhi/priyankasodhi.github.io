@@ -27,23 +27,27 @@ from palmerpenguins import load_penguins
 penguins = load_penguins()
 
 penguins.head()
+```
 
 The dataset contains information about penguin species, island, sex, body measurements, and other variables.
 
-Cleaning the data
+## Cleaning the data
 
 Next, I keep the variables needed for this analysis and remove rows with missing species or body mass values.
 
+```{python}
 penguins_clean = penguins[["species", "body_mass_g"]].dropna()
 
 penguins_clean.head()
+```
 
 This gives us a clean dataset containing the penguin species and body mass measurements needed for the analysis.
 
-Comparing average body mass
+## Comparing average body mass
 
 Next, I calculate the average body mass for each penguin species.
 
+```{python}
 average_mass = (
     penguins_clean
     .groupby("species", as_index=False)["body_mass_g"]
@@ -52,13 +56,15 @@ average_mass = (
 )
 
 average_mass
+```
 
 The resulting table shows the average body mass for each species.
 
-Visualizing body mass
+## Visualizing body mass
 
 Finally, I create a bar chart to compare the average body mass across species.
 
+```{python}
 #| label: fig-penguin-mass
 #| fig-cap: "Average body mass of penguins by species."
 
@@ -74,10 +80,11 @@ plt.ylabel("Average body mass (g)")
 plt.title("Average Body Mass by Penguin Species")
 
 plt.show()
+```
 
 The bar chart makes it easier to compare the average body mass of the three penguin species visually.
 
-What I found
+## What I found
 
 The analysis shows that penguin species differ in their average body mass. The bar chart makes these differences easy to compare visually.
 

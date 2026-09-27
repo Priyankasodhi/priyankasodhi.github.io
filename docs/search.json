@@ -60,7 +60,35 @@
     "href": "posts/python-analysis/index.html#loading-the-data",
     "title": "Exploring Penguin Body Mass",
     "section": "Loading the data",
-    "text": "Loading the data\nFirst, I load the required Python libraries and the Palmer Penguins dataset.\n#| message: false #| warning: false\nimport pandas as pd import matplotlib.pyplot as plt from palmerpenguins import load_penguins\npenguins = load_penguins()\npenguins.head()\nThe dataset contains information about penguin species, island, sex, body measurements, and other variables.\nCleaning the data\nNext, I keep the variables needed for this analysis and remove rows with missing species or body mass values.\npenguins_clean = penguins[[“species”, “body_mass_g”]].dropna()\npenguins_clean.head()\nThis gives us a clean dataset containing the penguin species and body mass measurements needed for the analysis.\nComparing average body mass\nNext, I calculate the average body mass for each penguin species.\naverage_mass = ( penguins_clean .groupby(“species”, as_index=False)[“body_mass_g”] .mean() .sort_values(“body_mass_g”, ascending=False) )\naverage_mass\nThe resulting table shows the average body mass for each species.\nVisualizing body mass\nFinally, I create a bar chart to compare the average body mass across species.\n#| label: fig-penguin-mass #| fig-cap: “Average body mass of penguins by species.”\nplt.figure(figsize=(7, 5))\nplt.bar( average_mass[“species”], average_mass[“body_mass_g”] )\nplt.xlabel(“Penguin species”) plt.ylabel(“Average body mass (g)”) plt.title(“Average Body Mass by Penguin Species”)\nplt.show()\nThe bar chart makes it easier to compare the average body mass of the three penguin species visually.\nWhat I found\nThe analysis shows that penguin species differ in their average body mass. The bar chart makes these differences easy to compare visually.\nThis simple analysis demonstrates how Python can be used to load a dataset, clean data, calculate grouped summaries, and create a visualization."
+    "text": "Loading the data\nFirst, I load the required Python libraries and the Palmer Penguins dataset.\n\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom palmerpenguins import load_penguins\n\npenguins = load_penguins()\n\npenguins.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n\n\n\n\n\nThe dataset contains information about penguin species, island, sex, body measurements, and other variables."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#cleaning-the-data",
+    "href": "posts/python-analysis/index.html#cleaning-the-data",
+    "title": "Exploring Penguin Body Mass",
+    "section": "Cleaning the data",
+    "text": "Cleaning the data\nNext, I keep the variables needed for this analysis and remove rows with missing species or body mass values.\n\npenguins_clean = penguins[[\"species\", \"body_mass_g\"]].dropna()\n\npenguins_clean.head()\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n0\nAdelie\n3750.0\n\n\n1\nAdelie\n3800.0\n\n\n2\nAdelie\n3250.0\n\n\n4\nAdelie\n3450.0\n\n\n5\nAdelie\n3650.0\n\n\n\n\n\n\n\nThis gives us a clean dataset containing the penguin species and body mass measurements needed for the analysis."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#comparing-average-body-mass",
+    "href": "posts/python-analysis/index.html#comparing-average-body-mass",
+    "title": "Exploring Penguin Body Mass",
+    "section": "Comparing average body mass",
+    "text": "Comparing average body mass\nNext, I calculate the average body mass for each penguin species.\n\naverage_mass = (\n    penguins_clean\n    .groupby(\"species\", as_index=False)[\"body_mass_g\"]\n    .mean()\n    .sort_values(\"body_mass_g\", ascending=False)\n)\n\naverage_mass\n\n\n\n\n\n\n\n\nspecies\nbody_mass_g\n\n\n\n\n2\nGentoo\n5076.016260\n\n\n1\nChinstrap\n3733.088235\n\n\n0\nAdelie\n3700.662252\n\n\n\n\n\n\n\nThe resulting table shows the average body mass for each species."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#visualizing-body-mass",
+    "href": "posts/python-analysis/index.html#visualizing-body-mass",
+    "title": "Exploring Penguin Body Mass",
+    "section": "Visualizing body mass",
+    "text": "Visualizing body mass\nFinally, I create a bar chart to compare the average body mass across species.\n\nplt.figure(figsize=(7, 5))\n\nplt.bar(\n    average_mass[\"species\"],\n    average_mass[\"body_mass_g\"]\n)\n\nplt.xlabel(\"Penguin species\")\nplt.ylabel(\"Average body mass (g)\")\nplt.title(\"Average Body Mass by Penguin Species\")\n\nplt.show()\n\n\n\n\n\n\n\nFigure 1: Average body mass of penguins by species.\n\n\n\n\n\nThe bar chart makes it easier to compare the average body mass of the three penguin species visually."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#what-i-found",
+    "href": "posts/python-analysis/index.html#what-i-found",
+    "title": "Exploring Penguin Body Mass",
+    "section": "What I found",
+    "text": "What I found\nThe analysis shows that penguin species differ in their average body mass. The bar chart makes these differences easy to compare visually.\nThis simple analysis demonstrates how Python can be used to load a dataset, clean data, calculate grouped summaries, and create a visualization."
   },
   {
     "objectID": "about.html",
