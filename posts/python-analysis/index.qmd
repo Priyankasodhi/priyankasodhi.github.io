@@ -1,0 +1,53 @@
+---
+title: "Exploring Penguin Body Mass"
+author: "Priyanka Sodhi"
+date: 2026-09-27
+---
+
+## Introduction
+
+In this post, I use Python to explore body mass differences among penguin species. I use the Palmer Penguins dataset, which contains measurements of penguins from three species.
+
+The goal is to load the data, clean the relevant variables, calculate average body mass by species, and visualize the results.
+
+Data source: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/).
+
+## Loading the data
+
+First, I load the required Python libraries and the Palmer Penguins dataset.
+
+```{python}
+#| message: false
+#| warning: false
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+
+penguins.head()
+
+The dataset contains information about penguin species, island, sex, body measurements, and other variables.
+
+Cleaning the data
+
+Next, I keep the variables needed for this analysis and remove rows wNext, I keep the variables needed for this anguins_clean = penguins[["species", "body_mass_g"]].dropna()
+
+penguipenguipenguipe)
+
+This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a cleanin sThis This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi aues("body_mass_g", ascending=False)
+)
+
+average_mass
+
+The resulting table shows the average body mass for each species.
+
+Visualizing body mass
+
+Finally, I create a bar chart to compare the average body mass across species.
+
+#| label:#| label:#| labes
+#| fig-cap: "Average body mass of #| fig-cap: "Average body mass of figsize=#| fig-cap: "Avera    averag#| fig-cap: "As"]#| fig-cap: "Average body mass of #| fig-cap: "Average body mass of figsize=#| fig-cap: "Avera    averaplt.tit#| fig-cape Body Ma#| fig-cap: "Average body mass of #| fig-cap: "Average body mass of figsize=#| fig-cap: "Avera    averag#| fig-cap: "As"]#| fig-cap: "Average body mass of #| fig-cap: "Aves th#| fig-cap: "Avees differ in their average body mass. The bar chart makes these differences easy to compare visually.
+
+This simple analysis demonstrates how Python can be used to load a dataset, clean data, calculate grouped summaries, and create a visualization.

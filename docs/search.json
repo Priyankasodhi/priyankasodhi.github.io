@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "My first weeks in MDS\n\n\n\n\n\n\n\n\nSep 13, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\nNo matching items"
+    "text": "Exploring Penguin Body Mass\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 13, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -19,6 +19,27 @@
     "title": "My first weeks in MDS",
     "section": "",
     "text": "Starting the MDS program at UBC has been an exciting experience so far. The first few weeks have been a mix of orientation, meeting new people, getting familiar with the program, and settling into a new academic routine. It has been interesting to see how quickly the program has brought together people with different backgrounds and experiences.\nOne of the things that stood out to me was how quickly the pace picked up once classes began. There has already been a lot to learn, particularly around programming, statistics, and working with data. Coming from an analytics and business intelligence background, I’m looking forward to building on what I already know while developing stronger technical skills.\nI’m still getting used to the workload and the rhythm of MDS, but I’m enjoying the challenge. I’m especially excited to see how the concepts we learn in class connect to real-world data problems and to the work I hope to do in the future."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html",
+    "href": "posts/python-analysis/index.html",
+    "title": "Exploring Penguin Body Mass",
+    "section": "",
+    "text": "In this post, I use Python to explore body mass differences among penguin species. I use the Palmer Penguins dataset, which contains measurements of penguins from three species.\nThe goal is to load the data, clean the relevant variables, calculate average body mass by species, and visualize the results.\nData source: Palmer Penguins."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#introduction",
+    "href": "posts/python-analysis/index.html#introduction",
+    "title": "Exploring Penguin Body Mass",
+    "section": "",
+    "text": "In this post, I use Python to explore body mass differences among penguin species. I use the Palmer Penguins dataset, which contains measurements of penguins from three species.\nThe goal is to load the data, clean the relevant variables, calculate average body mass by species, and visualize the results.\nData source: Palmer Penguins."
+  },
+  {
+    "objectID": "posts/python-analysis/index.html#loading-the-data",
+    "href": "posts/python-analysis/index.html#loading-the-data",
+    "title": "Exploring Penguin Body Mass",
+    "section": "Loading the data",
+    "text": "Loading the data\nFirst, I load the required Python libraries and the Palmer Penguins dataset.\n#| message: false #| warning: false\nimport pandas as pd import matplotlib.pyplot as plt from palmerpenguins import load_penguins\npenguins = load_penguins()\npenguins.head()\nThe dataset contains information about penguin species, island, sex, body measurements, and other variables.\nCleaning the data\nNext, I keep the variables needed for this analysis and remove rows wNext, I keep the variables needed for this anguins_clean = penguins[[“species”, “body_mass_g”]].dropna()\npenguipenguipenguipe)\nThis This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a cleanin sThis This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi a clean This This Thi aues(“body_mass_g”, ascending=False) )\naverage_mass\nThe resulting table shows the average body mass for each species.\nVisualizing body mass\nFinally, I create a bar chart to compare the average body mass across species.\n#| label:#| label:#| labes #| fig-cap: “Average body mass of #| fig-cap:”Average body mass of figsize=#| fig-cap: “Avera averag#| fig-cap:”As”]#| fig-cap: “Average body mass of #| fig-cap:”Average body mass of figsize=#| fig-cap: “Avera averaplt.tit#| fig-cape Body Ma#| fig-cap:”Average body mass of #| fig-cap: “Average body mass of figsize=#| fig-cap:”Avera averag#| fig-cap: “As”]#| fig-cap: “Average body mass of #| fig-cap:”Aves th#| fig-cap: “Avees differ in their average body mass. The bar chart makes these differences easy to compare visually.\nThis simple analysis demonstrates how Python can be used to load a dataset, clean data, calculate grouped summaries, and create a visualization."
   },
   {
     "objectID": "about.html",
