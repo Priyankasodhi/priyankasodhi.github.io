@@ -4,7 +4,7 @@
     "href": "blog.html",
     "title": "Blog",
     "section": "",
-    "text": "Exploring Iris Flower Measurements\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Penguin Body Mass\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 13, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\nNo matching items"
+    "text": "Exploring Iris Flower Measurements\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nPassing Data Between R and Python\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nExploring Penguin Body Mass\n\n\n\n\n\n\n\n\nSep 27, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\n\n\n\n\n\n\n\nMy first weeks in MDS\n\n\n\n\n\n\n\n\nSep 13, 2026\n\n\nPriyanka Sodhi\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
@@ -14,11 +14,46 @@
     "text": "MDS Student at the University of British Columbia\n\n\nFrom analyticsto data science.\n\nI’m a data and analytics professional with several years of experience in analytics and business intelligence, working with international clients. I’m currently pursuing a Master of Data Science at the University of British Columbia, where I’m strengthening my skills in data science, machine learning, and analytical problem-solving. I’m interested in using data to uncover meaningful insights and build practical solutions to real-world problems. Through MDS, I hope to combine my analytics experience with deeper technical expertise.\n\n\nAbout Me Blog"
   },
   {
-    "objectID": "posts/first-weeks/index.html",
-    "href": "posts/first-weeks/index.html",
-    "title": "My first weeks in MDS",
+    "objectID": "posts/r-and-python/index.html",
+    "href": "posts/r-and-python/index.html",
+    "title": "Passing Data Between R and Python",
     "section": "",
-    "text": "Starting the MDS program at UBC has been an exciting experience so far. The first few weeks have been a mix of orientation, meeting new people, getting familiar with the program, and settling into a new academic routine. It has been interesting to see how quickly the program has brought together people with different backgrounds and experiences.\nOne of the things that stood out to me was how quickly the pace picked up once classes began. There has already been a lot to learn, particularly around programming, statistics, and working with data. Coming from an analytics and business intelligence background, I’m looking forward to building on what I already know while developing stronger technical skills.\nI’m still getting used to the workload and the rhythm of MDS, but I’m enjoying the challenge. I’m especially excited to see how the concepts we learn in class connect to real-world data problems and to the work I hope to do in the future."
+    "text": "This post demonstrates how R and Python can be used together in the same Quarto document. I create an object in R, use Python to work with that object, and then bring the Python result back into R.\nThe dataset used is the built-in iris dataset in R.\nData source: R iris dataset."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#introduction",
+    "href": "posts/r-and-python/index.html#introduction",
+    "title": "Passing Data Between R and Python",
+    "section": "",
+    "text": "This post demonstrates how R and Python can be used together in the same Quarto document. I create an object in R, use Python to work with that object, and then bring the Python result back into R.\nThe dataset used is the built-in iris dataset in R.\nData source: R iris dataset."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#creating-data-in-r",
+    "href": "posts/r-and-python/index.html#creating-data-in-r",
+    "title": "Passing Data Between R and Python",
+    "section": "Creating data in R",
+    "text": "Creating data in R\nFirst, I create a vector in R containing the petal lengths for the iris dataset.\n\ndata(iris)\nlibrary(reticulate)\n\n\npetal_lengths &lt;- iris$Petal.Length\n\nhead(petal_lengths)\n\n[1] 1.4 1.4 1.3 1.5 1.4 1.7\n\n\nThe petal_lengths object is created in R and contains the petal length measurements for all 150 observations."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#using-the-r-object-in-python",
+    "href": "posts/r-and-python/index.html#using-the-r-object-in-python",
+    "title": "Passing Data Between R and Python",
+    "section": "Using the R object in Python",
+    "text": "Using the R object in Python\nThe Python chunk can access the R object using r.petal_lengths.\n\nimport numpy as np\n\npython_petal_lengths = np.array(r.petal_lengths)\n\npython_mean = python_petal_lengths.mean()\n\npython_mean\n\nnp.float64(3.7580000000000005)\n\n\nPython receives the R vector and calculates its mean petal length."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#passing-the-python-result-back-to-r",
+    "href": "posts/r-and-python/index.html#passing-the-python-result-back-to-r",
+    "title": "Passing Data Between R and Python",
+    "section": "Passing the Python result back to R",
+    "text": "Passing the Python result back to R\nThe Python result can then be accessed from R using py$python_mean.\n\npython_mean_from_r &lt;- py$python_mean\n\npython_mean_from_r\n\n[1] 3.758\n\n\nThe result calculated in Python is now available in R."
+  },
+  {
+    "objectID": "posts/r-and-python/index.html#visualizing-the-data",
+    "href": "posts/r-and-python/index.html#visualizing-the-data",
+    "title": "Passing Data Between R and Python",
+    "section": "Visualizing the data",
+    "text": "Visualizing the data\nFinally, I use the original R dataset to visualize the petal length measurements across species.\n\nboxplot(\n  Petal.Length ~ Species,\n  data = iris,\n  xlab = \"Iris species\",\n  ylab = \"Petal length\",\n  main = \"Petal Length by Species\"\n)\n\n\n\n\n\n\n\nFigure 1: Petal length measurements across iris species.\n\n\n\n\n\nThe R and Python chunks in this post share objects through reticulate, allowing both languages to be used together in the same computational document."
   },
   {
     "objectID": "posts/r-analysis/index.html",
@@ -61,6 +96,13 @@
     "title": "Exploring Iris Flower Measurements",
     "section": "Visualizing petal length",
     "text": "Visualizing petal length\nFinally, I create a boxplot to compare petal length across the three species.\n\nboxplot(\n  Petal.Length ~ Species,\n  data = iris,\n  xlab = \"Iris species\",\n  ylab = \"Petal length\",\n  main = \"Petal Length by Iris Species\"\n)\n\n\n\n\n\n\n\nFigure 1: Petal length measurements across iris species.\n\n\n\n\n\nThe boxplot makes it easier to compare the distribution of petal length for each species. Setosa has the shortest petals, while virginica has the longest petals. Versicolor falls between the two."
+  },
+  {
+    "objectID": "posts/first-weeks/index.html",
+    "href": "posts/first-weeks/index.html",
+    "title": "My first weeks in MDS",
+    "section": "",
+    "text": "Starting the MDS program at UBC has been an exciting experience so far. The first few weeks have been a mix of orientation, meeting new people, getting familiar with the program, and settling into a new academic routine. It has been interesting to see how quickly the program has brought together people with different backgrounds and experiences.\nOne of the things that stood out to me was how quickly the pace picked up once classes began. There has already been a lot to learn, particularly around programming, statistics, and working with data. Coming from an analytics and business intelligence background, I’m looking forward to building on what I already know while developing stronger technical skills.\nI’m still getting used to the workload and the rhythm of MDS, but I’m enjoying the challenge. I’m especially excited to see how the concepts we learn in class connect to real-world data problems and to the work I hope to do in the future."
   },
   {
     "objectID": "posts/python-analysis/index.html",

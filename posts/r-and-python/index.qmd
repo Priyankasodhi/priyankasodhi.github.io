@@ -1,0 +1,79 @@
+---
+title: "Passing Data Between R and Python"
+author: "Priyanka Sodhi"
+date: 2026-09-27
+---
+
+## Introduction
+
+This post demonstrates how R and Python can be used together in the same Quarto document. I create an object in R, use Python to work with that object, and then bring the Python result back into R.
+
+The dataset used is the built-in `iris` dataset in R.
+
+Data source: [R iris dataset](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html).
+
+## Creating data in R
+
+First, I create a vector in R containing the petal lengths for the iris dataset.
+
+```{r}
+#| message: false
+#| warning: false
+
+data(iris)
+library(reticulate)
+
+
+petal_lengths <- iris$Petal.Length
+
+head(petal_lengths)
+```
+
+The `petal_lengths` object is created in R and contains the petal length measurements for all 150 observations.
+
+## Using the R object in Python
+
+The Python chunk can access the R object using `r.petal_lengths`.
+
+```{python}
+import numpy as np
+
+python_petal_lengths = np.array(r.petal_lengths)
+
+python_mean = python_petal_lengths.mean()
+
+python_mean
+```
+
+Python receives the R vector and calculates its mean petal length.
+
+## Passing the Python result back to R
+
+The Python result can then be accessed from R using `py$python_mean`.
+
+```{r}
+python_mean_from_r <- py$python_mean
+
+python_mean_from_r
+```
+
+The result calculated in Python is now available in R.
+
+## Visualizing the data
+
+Finally, I use the original R dataset to visualize the petal length measurements across species.
+
+```{r}
+#| label: fig-r-python-petal-length
+#| fig-cap: "Petal length measurements across iris species."
+
+boxplot(
+  Petal.Length ~ Species,
+  data = iris,
+  xlab = "Iris species",
+  ylab = "Petal length",
+  main = "Petal Length by Species"
+)
+```
+
+The R and Python chunks in this post share objects through `reticulate`, allowing both languages to be used together in the same computational document.
