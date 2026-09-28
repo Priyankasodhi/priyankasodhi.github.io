@@ -71,5 +71,4 @@ boxplot(
   main = "Petal Length by Iris Species"
 )
 ```
-
-The boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot# What I The boxplot makes itshoThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe b petal lengthTfor each sThe boxplot mathe boxplotThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe bod tThe boxplot makes it easi its strucThe boxplot makes it easiTh toThe boxplot makes it easiTh ton.
+The boxplot makes it easier to compare the distribution of petal length for each species. Setosa has the shortest petals, while virginica has the longest petals. Versicolor falls between the two.

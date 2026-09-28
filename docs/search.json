@@ -60,7 +60,7 @@
     "href": "posts/r-analysis/index.html#visualizing-petal-length",
     "title": "Exploring Iris Flower Measurements",
     "section": "Visualizing petal length",
-    "text": "Visualizing petal length\nFinally, I create a boxplot to compare petal length across the three species.\n\nboxplot(\n  Petal.Length ~ Species,\n  data = iris,\n  xlab = \"Iris species\",\n  ylab = \"Petal length\",\n  main = \"Petal Length by Iris Species\"\n)\n\n\n\n\n\n\n\nFigure 1: Petal length measurements across iris species.\n\n\n\n\n\nThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot# What I The boxplot makes itshoThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe b petal lengthTfor each sThe boxplot mathe boxplotThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe boxplot makes it easiTh toThe bod tThe boxplot makes it easi its strucThe boxplot makes it easiTh toThe boxplot makes it easiTh ton."
+    "text": "Visualizing petal length\nFinally, I create a boxplot to compare petal length across the three species.\n\nboxplot(\n  Petal.Length ~ Species,\n  data = iris,\n  xlab = \"Iris species\",\n  ylab = \"Petal length\",\n  main = \"Petal Length by Iris Species\"\n)\n\n\n\n\n\n\n\nFigure 1: Petal length measurements across iris species.\n\n\n\n\n\nThe boxplot makes it easier to compare the distribution of petal length for each species. Setosa has the shortest petals, while virginica has the longest petals. Versicolor falls between the two."
   },
   {
     "objectID": "posts/python-analysis/index.html",
